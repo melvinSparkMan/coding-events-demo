@@ -22,21 +22,21 @@ public class EventController {
 
     @GetMapping("create")
     public String displayCreateEventForm(Model model) {
-        model.addAttribute("title", "Create Event");
-        return "events/create";
+            model.addAttribute("title", "Create Event");
+            return "events/create";
     }
 
     @PostMapping("create")
     public String processCreateEventForm(@ModelAttribute Event newEvent) {
-        EventData.add(newEvent);
-        return "redirect:";
+            EventData.add(newEvent);
+            return "redirect:";
     }
 
     @GetMapping("delete")
     public String displayDeleteEventForm(Model model) {
-        model.addAttribute("title", "Delete Events");
-        model.addAttribute("events", EventData.getAll());
-        return "events/delete";
+            model.addAttribute("title", "Delete Events");
+            model.addAttribute("events", EventData.getAll());
+            return "events/delete";
     }
 
     @PostMapping("delete")
